@@ -1,0 +1,66 @@
+﻿@model ElectronicsShop.DAL.ViewModels.LoginModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer _localizer
+@{
+
+    var language = Context.Request.Cookies["SelectLanguage"];
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    @*<script src="https://use.fontawesome.com/4ecc3dbb0b.js"></script>*@
+    <link href="~/css/Register.css" rel="stylesheet" />
+
+</head>
+<body>
+    @*<div class="intro-page" style="background-image: url(&quot;http://www.zoorme.com/public/front/images/intro-page/intro_bg.svg&quot;);">
+        <div class="container-fluid">*@
+
+    <div class="form_wrapper">
+        <div class="form_container">
+            <div class="title_container">
+                <h2>@_localizer["Login Form"]</h2>
+                <form asp-action="Login" method="post" id="LoginForm">
+
+                    <div class="input_field">
+                        <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                        <input type="text" name="LoginUserName" placeholder="@_localizer["UserName"]" required value="@Model.LoginUserName" />
+                    </div>
+                    <div class="input_field">
+                        <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                        <input type="password" name="LoginPassword" placeholder="@_localizer["Password"]" required value="@Model.LoginPassword" id="Password" />
+                    </div>
+                    <a asp-action="ForgetPassword" class="text-uppercas">@_localizer["Forget Password"]</a>
+                    <input class="button" type="submit" value="@_localizer["Login"]" id="loginSubmit" />
+
+
+                    <span id="Required" style="color:#ff0000;"></span>
+                    @if (@ViewBag.message != null)
+                    {
+                        @if (@language == "ar-EG")
+                        {
+                            <h4 style="color:red;">
+                                خطأ في اسم المستخدم أو كلمة مرور
+                            </h4>
+                        }
+                        <h4 style="color:red;">
+                            @ViewBag.message
+                        </h4>
+                    }
+                </form>
+
+           
+
+            </div>
+        </div>
+    </div>
+ 
+
+</body>
+
+</html>

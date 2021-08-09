@@ -1,0 +1,56 @@
+﻿@model ElectronicsShop.DAL.ViewModels.ProductViewModel
+
+@{
+    ViewData["Title"] = "InsertProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>InsertProduct</h1>
+
+<h4>ProductViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="InsertProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="prdID" class="control-label"></label>
+                <input asp-for="prdID" class="form-control" />
+                <span asp-validation-for="prdID" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="prdName" class="control-label"></label>
+                <input asp-for="prdName" class="form-control" />
+                <span asp-validation-for="prdName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prdPrice" class="control-label"></label>
+                <input asp-for="prdPrice" class="form-control" />
+                <span asp-validation-for="prdPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prdQuantity" class="control-label"></label>
+                <input asp-for="prdQuantity" class="form-control" />
+                <span asp-validation-for="prdQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prdDescription" class="control-label"></label>
+                <input asp-for="prdDescription" class="form-control" />
+                <span asp-validation-for="prdDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="img" class="control-label"></label>
+                <input asp-for="img" class="form-control" />
+                <span asp-validation-for="img" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

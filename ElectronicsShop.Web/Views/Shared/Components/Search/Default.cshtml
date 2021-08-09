@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ElectronicsShop.DAL.Entities.Category>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer _localizer
+@using Microsoft.AspNetCore.Http
+@{
+
+    // var language = Context.Session.GetString("SelectLanguage");
+    var language = Context.Request.Cookies["SelectLanguage"];
+}
+
+@using (Html.BeginForm("filterProduct", "Home", FormMethod.Get))
+{
+    <div class="search-box">
+        <div class="items">
+            <div class="item row" style="text-align:right" >
+                <div class="place origin col-6" style="display:inline-block" >
+                    <div class="place-header arrow-open">
+
+                        <label>@_localizer["Select a Category"]</label>
+                        <select name="catId" aria-label="Select Country" style="width:60%;">
+                            <option value="">@_localizer["Choose Category"]</option>
+                            @foreach (var item in Model)
+                            {
+                                @if (@language == "ar-EG")
+                                {
+                                    <option value="@item.catID" style="font-size:20px">@item.catLocalName</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.catID" style="font-size:20px">@item.catName</option>
+                                }
+
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="submit-container col-6" style="display:inline-block ; text-align:left">
+                    <button id="submit" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+  
+}

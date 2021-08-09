@@ -1,0 +1,105 @@
+﻿@model ElectronicsShop.DAL.ViewModels.UserModel
+
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer _localizer
+@{
+
+    var language = Context.Request.Cookies["SelectLanguage"];
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    @*<script src="https://use.fontawesome.com/4ecc3dbb0b.js"></script>*@
+    <link href="~/css/Register.css" rel="stylesheet" />
+
+</head>
+<body>
+    @*<div class="intro-page" style="background-image: url(&quot;http://www.zoorme.com/public/front/images/intro-page/intro_bg.svg&quot;);">
+        <div class="container-fluid">*@
+
+    <div class="form_wrapper">
+        <div class="form_container">
+            <div class="title_container">
+                <h2>@_localizer["Registration Form"]</h2>
+                <form asp-action="Register" method="post" id="RegisterForm">
+
+                    <div class="input_field">
+                        <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                        <input type="text" name="UserName" placeholder="@_localizer["UserName"]" required value="@Model.UserName" />
+                    </div>
+
+                    <div class="input_field">
+                        <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                        <input type="email" name="Email" placeholder="@_localizer["Email"]" required value="@Model.Email" />
+                    </div>
+                    <div class="input_field">
+                        <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                        <input type="text" name="fulladdress" placeholder="@_localizer["fulladdress"]" required value="@Model.fulladdress" />
+                    </div>
+                    <div class="input_field">
+                        <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                        <input type="number" name="phonenumber" placeholder="@_localizer["phonenumber"]" required value="@Model.phonenumber" />
+                    </div>
+                    <div class="input_field">
+                        <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                        <input type="date" name="birthdate" placeholder="@_localizer["birthdate"]" required value="@Model.birthdate" />
+                    </div>
+                    <div class="input_field">
+                        <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                        <input type="password" name="Password" placeholder="@_localizer["Password"]" required value="@Model.Password" id="Password" />
+                    </div>
+
+                    <input class="button" type="submit" value="@_localizer["Register"]" id="btnSubmit" />
+                    @if (@ViewBag.error != null)
+                    {
+                        <h6 style="color:red; text-align:center"> @ViewBag.error</h6>
+                    }
+
+
+                </form>
+
+                <div class="form-group">
+                    <div class="topCushion">@_localizer["Already a member"]<a href="/User/Login">@_localizer["Login"]</a></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    @*
+
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>*@
+    @*<script type="text/javascript">
+            $(document).ready(function () {
+
+                $('#btnSubmit').on('click', function (e) {
+                    e.preventDefault();
+                    Validate();
+                });
+
+        function Validate() {
+                var password = document.getElementById("Password").value;
+                var confirmPassword = document.getElementById("ConfirmPassword").value;
+            if (password != confirmPassword) {
+                $("#Required").html('Passwords do not match.').css('color', 'red');
+
+            }
+            else {
+                $("#RegisterForm").submit();
+            }
+
+            }
+
+
+            });
+            </script>*@
+
+</body>
+
+</html>

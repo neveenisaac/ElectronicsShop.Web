@@ -1,0 +1,97 @@
+﻿/*body,
+html,
+*, .container-fluid, .d-flex, .sidebar-content {
+    direction: rtl;
+   
+}
+
+.sidebar-content .row .container_sidebar {
+    float: right;
+    text-align: right;
+   border: 5px solid red;
+}*/
+.dashboard-page *, .AdminOptionPage {
+    direction: rtl;
+}
+.dashboard-page p {
+   direction: rtl;
+}
+.dashboard-page header, .sidebar-content .container_sidebar, .dashboard-page.open_sidebar .sidebar-content .container_sidebar {
+    direction: rtl;
+    text-align: right;
+    float: right;
+    display:block;
+    /*border: 5px solid red;*/
+}
+/*///adminOptionpage*/
+.AdminOptionPage{
+   direction:rtl;
+   text-align:right;
+}
+.AdminOptionPage form div label {
+    /*color: red;*/
+    direction: rtl;
+    text-align: right;
+    display: block;
+}
+
+.rtl .dashboard-page .notification {
+    padding-right: 15px;
+    padding-left: 0;
+}
+
+.rtl .dashboard-page.open_sidebar .opencolsemenue {
+    left: auto;
+    right: 265px;
+}
+
+.rtl .opencolsemenue {
+    left: auto;
+    right: 15px;
+}
+
+.rtl .dashboard-page {
+    padding-right: 0;
+}
+
+    .rtl .dashboard-page.open_sidebar {
+        padding-right: 250px;
+        padding-left: 0;
+    }
+
+.rtl .sidebar-content .container_sidebar {
+    left: auto;
+    right: -300px;
+}
+
+.rtl .dashboard-page.open_sidebar .sidebar-content .container_sidebar {
+    left: auto;
+    right: 0;
+}
+.rtl .dashboard-page .ml-auto {
+    margin-left: 0 !important;
+    margin-right: auto;
+}
+@media(max-width: 768px) {
+    .rtl .dashboard-page.open_sidebar {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.rtl #SelectLanguage {
+    background: transparent;
+    outline: 0;
+    direction: rtl;
+    text-align: right;
+}
+.rtl .form_wrapper input[type="text"],
+.rtl .form_wrapper input[type="email"],
+.rtl .form_wrapper input[type="password"] {
+    padding: 8px 35px 9px 10px
+}
+.rtl .form_wrapper .input_field > span {
+    left: auto;
+    right: 0;
+    border-left: 1px solid #cccccc;
+    border-right: 0;
+}

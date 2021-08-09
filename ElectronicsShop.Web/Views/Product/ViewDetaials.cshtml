@@ -1,0 +1,107 @@
+﻿@model ElectronicsShop.DAL.Entities.Product
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3> Product Specification </h3>
+<div ng-controller="MainCtrl">
+    
+    <div class="panel panel-default">
+        <div class="panel-heading"> @Model.prdName </div>
+        <div class="panel-body">
+            <div class="col-sm-3 col-md-6" style="color:blue">
+                <img src="@Model.img" width="400" height="400" />
+            </div>
+            <div class="col-sm-9 col-md-6">
+                <h3>
+                    <span id="mobilename" style="color:black"> <b> ProductName: </b></span>
+                </h3>
+                <h6>
+                    <span id="mobilename"
+                          style="color:black"> @Model.prdName </span>
+                    </h6>
+                    <h3>
+                        <span id="mobilename" style="color:black"> <b> Features: </b></span>
+                    </h3>
+                    <h6>
+                        <span id="mobilename" style="color:black"> @Model.prdDescription </span>
+                    </h6>
+                    <h3>
+                        <span id="mobilename" style="color:black"> <b> ProductQuatity: </b></span>
+                    </h3>
+                    <h6>
+                        <span id="mobilename"
+                              style="color:black"> @Model.prdQuantity </span>
+                        </h6>
+                        <h3>
+                            <span id="mobilename" style="color:black"> <b> ProductPrice: </b></span>
+                        </h3>
+                        <h6>
+                            <span id="mobilename"
+                                  style="color:black"> @Model.prdPrice </span>
+                            </h6>
+                        </div>
+                    </div>
+
+        <div>
+            <a id="btn_add" class="btn btn-info btn-lg" style="margin-left:60px" href="@Url.Action("Add", "AddToCart",Model)">
+                <span class="glyphicon glyphicon-shopping-cart">
+                </span> Add To Cart 
+            </a>
+            <a id="btn_add"
+               class="btn btn-info btn-lg"
+               style="margin-left:60px" asp-controller="Product" asp-action="Index">
+                <span class="glyphicon glyphicon-eye-open"> </span> Continue shopping
+            </a>   <br />  <br />
+        </div>   </div>
+            @*<h1>ViewDetaials</h1>
+
+                <div>
+                    <h4>Product</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class = "col-sm-2">
+                            @Html.DisplayNameFor(model => model.prdName)
+                        </dt>
+                        <dd class = "col-sm-10">
+                            @Html.DisplayFor(model => model.prdName)
+                        </dd>
+                        <dt class = "col-sm-2">
+                            @Html.DisplayNameFor(model => model.prdPrice)
+                        </dt>
+                        <dd class = "col-sm-10">
+                            @Html.DisplayFor(model => model.prdPrice)
+                        </dd>
+                        <dt class = "col-sm-2">
+                            @Html.DisplayNameFor(model => model.prdQuantity)
+                        </dt>
+                        <dd class = "col-sm-10">
+                            @Html.DisplayFor(model => model.prdQuantity)
+                        </dd>
+                        <dt class = "col-sm-2">
+                            @Html.DisplayNameFor(model => model.prdDescription)
+                        </dt>
+                        <dd class = "col-sm-10">
+                            @Html.DisplayFor(model => model.prdDescription)
+                        </dd>
+                        <dt class = "col-sm-2">
+                            @Html.DisplayNameFor(model => model.img)
+                        </dt>
+                        <dd class = "col-sm-10">
+                            @Html.DisplayFor(model => model.img)
+                        </dd>
+                        <dt class = "col-sm-2">
+                            @Html.DisplayNameFor(model => model.Categorys)
+                        </dt>
+                        <dd class = "col-sm-10">
+                            @Html.DisplayFor(model => model.Categorys.catID)
+                        </dd>
+                    </dl>
+                </div>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model.prdID">Edit</a> |
+                    <a asp-action="Index">Back to List</a>
+                </div>*@
+
+
+                    </div>

@@ -1,0 +1,137 @@
+﻿@model IEnumerable<ElectronicsShop.DAL.Entities.Product>
+@{
+    ViewBag.Title = "Myorder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    int sum = 0;
+    var JWToken = Context.Request.Cookies["JWToken"];
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+    .label
+{
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: Arial;
+}
+.contents
+{
+    border: 1px dotted black;
+    padding: 5px;
+    width: 300px;
+}
+.name
+{
+    color: #18B5F0;
+}
+.left
+{
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+.right
+{
+    margin-left: 60px;
+    line-height:50px;
+}
+.clear
+{
+    clear: both;
+}
+ #footer
+{
+    position:fixed;
+    bottom: 0px;
+    height: 3px;
+    background-color: #666;
+    color: #eee;
+    width:100%
+}
+
+</style>
+
+<div id="dvContents">
+
+    <table class="table table-hover" width="100%">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>availableQuantity</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (Model != null)
+            {
+            @foreach (var pro in Model)
+            {
+                <tr>
+
+
+                    <td>@pro.prdName</td>
+                    <td>
+
+                        <img id="img1" src="@pro.img" height="100" width="75" />
+
+                    </td>
+                    <td>&#8377;@pro.prdPrice</td>
+
+                    <td>@pro.prdQuantity</td>
+                    <td><input type="number" min="1" value="1" /></td>
+                    <td>
+
+
+                        <button id="btn_delete" class="label label-primary" data-slno="@pro.prdID" onclick="location.href='@Url.Action("Remove", "AddToCart", pro)'">
+                            <img src="~/Images/delete.png" height="30" width="30" />
+                        </button>
+                    </td>
+                </tr>
+
+            }
+            }
+        </tbody>
+
+        @foreach (var x in Model)
+        {
+            sum = Convert.ToInt32(x.prdPrice) + sum;
+
+        }
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+
+                <td><b>Total</b></td>
+                <td>
+                    &#8377;  @sum
+                </td>
+            </tr>
+
+        </tfoot>
+
+    </table>
+
+
+
+    <a type="button" class="btn btn-success" asp-controller="Home" asp-action="Index">Continue Shopping</a>
+    @if (JWToken != null)
+    {
+
+    var userid = User.Claims.First(m => m.Type == "UserID").Value;
+
+    @if (userid != null)
+    {
+      <a type="button" class="btn btn-warning">Place Order</a>
+    }
+
+    }
+   
+</div>

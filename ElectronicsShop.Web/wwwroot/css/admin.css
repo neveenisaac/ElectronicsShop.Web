@@ -1,0 +1,29 @@
+﻿.nav-pills .nav-link {
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    border-radius: 0 !important;
+    margin-right: -1px;
+}
+
+    .nav-pills .nav-link.active {
+        background: #fff !important;
+        color: #007bff !important;
+        border-radius: 0 !important;
+        border-right: 2px solid #fff;
+        position: relative;
+        z-index: 9;
+    }
+
+.dashboard .col-md-3 {
+    padding: 0;
+}
+
+.dashboard .col-md-9 {
+    border: 1px solid #ddd;
+}
+#SelectLanguage {
+    background: transparent;
+    outline: 0;
+    direction: ltr;
+    text-align: left;
+}
