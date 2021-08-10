@@ -1,4 +1,5 @@
-﻿@model ElectronicsShop.DAL.ViewModels.UserModel
+﻿
+@model ElectronicsShop.DAL.ViewModels.UserModel
 
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer _localizer
@@ -26,7 +27,7 @@
         <div class="form_container">
             <div class="title_container">
                 <h2>@_localizer["Registration Form"]</h2>
-                <form asp-action="Register" method="post" id="RegisterForm">
+                <form asp-action="RegisterAdmin" method="post" id="RegisterForm">
 
                     <div class="input_field">
                         <span><i aria-hidden="true" class="fa fa-user"></i></span>
@@ -72,9 +73,9 @@
     </div>
     @*
 
-    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>*@
+        @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>*@
     @*<script type="text/javascript">
             $(document).ready(function () {
 
@@ -103,3 +104,6 @@
 </body>
 
 </html>
+
+
+

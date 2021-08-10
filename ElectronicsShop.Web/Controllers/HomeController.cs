@@ -30,7 +30,7 @@ namespace ElectronicsShop.Web.Controllers
         public IActionResult Index(int pagenumber = 1)
         {
                 var products = _productService.GetAllProduct();
-                var ProductPagelist = paginatedList<Product>.CreateAsync(products, pagenumber, 4);
+                var ProductPagelist = paginatedList<Product>.CreateAsync(products, pagenumber, 5);
      
               return View(ProductPagelist);
         }

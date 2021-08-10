@@ -11,7 +11,7 @@ namespace ElectronicsShop.BAL.Helper
         public static bool SendMail(string to, string subject, string answer)
         {
 
-            var from = "neveenultimate@gmail.com";
+            var from = "administratorEmail";
             MailMessage mail = new MailMessage(from, to);
             SmtpClient client = new SmtpClient
             {
@@ -19,7 +19,7 @@ namespace ElectronicsShop.BAL.Helper
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = true,
                 Host = "smtp.gmail.com",
-                Credentials = new System.Net.NetworkCredential(from, "neveen@123"),
+                Credentials = new System.Net.NetworkCredential(from, "password"),
                 EnableSsl = true
             };
             mail.Subject = subject;

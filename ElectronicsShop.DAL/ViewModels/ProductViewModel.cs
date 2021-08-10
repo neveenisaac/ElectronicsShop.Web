@@ -15,6 +15,7 @@ namespace ElectronicsShop.DAL.ViewModels
         public string prdDescription { get; set; }
         public string img { get; set; }
         public IFormFile imagefile { get; set; }
+        public int catID { get; set; }
         public List<Category> categories { get; set; } = new List<Category>();
     }
 }

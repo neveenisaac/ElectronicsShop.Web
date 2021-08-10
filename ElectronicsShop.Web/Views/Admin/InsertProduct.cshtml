@@ -1,8 +1,9 @@
-﻿@model ElectronicsShop.DAL.ViewModels.ProductViewModel
+﻿@model ElectronicsShop.DAL.Entities.Product
 
 @{
     ViewData["Title"] = "InsertProduct";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+   
 }
 
 <h1>InsertProduct</h1>
@@ -14,10 +15,10 @@
         <form asp-action="InsertProduct">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @*<div class="form-group">
-                <label asp-for="prdID" class="control-label"></label>
-                <input asp-for="prdID" class="form-control" />
-                <span asp-validation-for="prdID" class="text-danger"></span>
-            </div>*@
+            <label asp-for="prdID" class="control-label"></label>
+            <input asp-for="prdID" class="form-control" />
+            <span asp-validation-for="prdID" class="text-danger"></span>
+        </div>*@
             <div class="form-group">
                 <label asp-for="prdName" class="control-label"></label>
                 <input asp-for="prdName" class="form-control" />
@@ -43,6 +44,7 @@
                 <input asp-for="img" class="form-control" />
                 <span asp-validation-for="img" class="text-danger"></span>
             </div>
+            @Html.DropDownList("categories", ((List<ElectronicsShop.DAL.Entities.Category>)ViewBag.categories).Select(m=> new SelectListItem ()))
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -50,7 +52,5 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
